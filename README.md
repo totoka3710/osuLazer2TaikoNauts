@@ -55,9 +55,9 @@ Songs/
 
 | エディション | 特徴・推奨用途 | 詳細ドキュメント |
 | :--- | :--- | :--- |
-| **Antigravity Edition** | **洗練されたGUI & ダークモード完備**<br>Windowsテーマ自動連動のダークモード、直感的なファイル選択ダイアログを搭載。完全単一EXE構成。 | [👉 Antigravity 版 README](Antigravity\README.md) |
-| **Claude Edition** | **CLI機能の充実 & 高度な安全性チェック**<br>実行前の `--dry-run`（テスト実行）、Windows予約名（CON/NUL等）の例外処理、詳細なエラー検知を実装。 | [👉 Claude 版 README](Claude\README.md) |
-| **Codex Edition** | **Realm スキーマ自動検出 & 堅牢な .NET 10 最適化**<br>Realm Studio との互換性、スキーマバージョンの動的追従に優れ、最もミニマルで堅牢な設計。 | [👉 Codex 版 README](Codex\README.md) |
+| **Antigravity Edition** | **洗練されたGUI & ダークモード完備**<br>Windowsテーマ自動連動のダークモード、直感的なファイル選択ダイアログを搭載。完全単一EXE構成。 | [👉 Antigravity 版 README](Antigravity/README.md) |
+| **Claude Edition** | **CLI機能の充実 & 高度な安全性チェック**<br>実行前の `--dry-run`（テスト実行）、Windows予約名（CON/NUL等）の例外処理、詳細なエラー検知を実装。 | [👉 Claude 版 README](Claude/README.md) |
+| **Codex Edition** | **Realm スキーマ自動検出 & 堅牢な .NET 10 最適化**<br>Realm Studio との互換性、スキーマバージョンの動的追従に優れ、最もミニマルで堅牢な設計。 | [👉 Codex 版 README](Codex/README.md) |
 
 ### `manifest.json` の互換性について
 すべて共通の JSON スキーマ（`last_synced`, `beatmap_sets`, `folder_name`, `files`）で設計されています。そのため、**あるエディションで初回同期を行った後、次回以降に別のエディションを実行しても無駄な再生成は発生せず、差分更新が正常に引き継がれます**。
