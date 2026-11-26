@@ -1,4 +1,6 @@
-# osuLazer2TaikoNauts
+# osuTaiko2TaikoNauts
+
+既存の譜面同期ツールは **BeatmapLinker** として管理します。今後追加する BeatmapRespacer と合わせたプロジェクト名は osuTaiko2TaikoNauts です。
 
 osu!lazer が管理するハッシュ化されたストレージから **osu!taiko 譜面** を抽出し、太鼓シミュレーター [TaikøNauts](https://taikonauts-docs.pages.dev/) へシンボリックリンク形式で同期・提供する Windows 向けユーティリティです。
 
@@ -55,9 +57,9 @@ Songs/
 
 | エディション | 特徴・推奨用途 | 詳細ドキュメント |
 | :--- | :--- | :--- |
-| **Antigravity Edition** | **洗練されたGUI & ダークモード完備**<br>Windowsテーマ自動連動のダークモード、直感的なファイル選択ダイアログを搭載。完全単一EXE構成。 | [👉 Antigravity 版 README](Antigravity/README.md) |
-| **Claude Edition** | **CLI機能の充実 & 高度な安全性チェック**<br>実行前の `--dry-run`（テスト実行）、Windows予約名（CON/NUL等）の例外処理、詳細なエラー検知を実装。 | [👉 Claude 版 README](Claude/README.md) |
-| **Codex Edition** | **Realm スキーマ自動検出 & 堅牢な .NET 10 最適化**<br>Realm Studio との互換性、スキーマバージョンの動的追従に優れ、最もミニマルで堅牢な設計。 | [👉 Codex 版 README](Codex/README.md) |
+| **Antigravity Edition** | **洗練されたGUI & ダークモード完備**<br>Windowsテーマ自動連動のダークモード、直感的なファイル選択ダイアログを搭載。完全単一EXE構成。 | [👉 Antigravity 版 README](BL_Antigravity/README.md) |
+| **Claude Edition** | **CLI機能の充実 & 高度な安全性チェック**<br>実行前の `--dry-run`（テスト実行）、Windows予約名（CON/NUL等）の例外処理、詳細なエラー検知を実装。 | [👉 Claude 版 README](BL_Claude/README.md) |
+| **Codex Edition** | **Realm スキーマ自動検出 & 堅牢な .NET 10 最適化**<br>Realm Studio との互換性、スキーマバージョンの動的追従に優れ、最もミニマルで堅牢な設計。 | [👉 Codex 版 README](BL_Codex/README.md) |
 
 ### `manifest.json` の互換性について
 すべて共通の JSON スキーマ（`last_synced`, `beatmap_sets`, `folder_name`, `files`）で設計されています。そのため、**あるエディションで初回同期を行った後、次回以降に別のエディションを実行しても無駄な再生成は発生せず、差分更新が正常に引き継がれます**。
@@ -82,14 +84,14 @@ Songs/
 
 ```powershell
 # 例: Antigravity 版をビルドする場合
-cd Antigravity
+cd BL_Antigravity
 dotnet publish -c Release
 
 # 生成された EXE を起動（初回のみ Songs パスを指定）
-.\bin\Release\net10.0-windows\win-x64\publish\osuLazer2TaikoNauts.exe --output_path "D:\TaikoNauts\Songs"
+.\bin\Release\net10.0-windows\win-x64\publish\BeatmapLinker.exe --output_path "D:\TaikoNauts\Songs"
 ```
 
-2回目以降は、エクスプローラーから `osuLazer2TaikoNauts.exe` をダブルクリックするか、バッチファイルから引数なしで実行するだけで自動差分同期が行われます。
+2回目以降は、エクスプローラーから `BeatmapLinker.exe` をダブルクリックするか、バッチファイルから引数なしで実行するだけで自動差分同期が行われます。
 
 ---
 
